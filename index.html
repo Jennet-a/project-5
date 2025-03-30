@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="body">
+    <div id="slidemenu">
+        <div class="slidemenu--top">
+            <div class="slidemenu--top--header">
+                <div class="slidemenu--top--header--left">
+                    <button id="burger" onclick="burgerOpen()">
+                        <img src="./icons/burgerClose.png" width="40" height="40" class="slidemenu--top--header__icon">
+                    </button> 
+                    <img src="./icons/Group.png" width="97" height="51" class="slidemenu--top--header__icon">
+                </div>
+                <div>
+                    <img src="./icons/search.png" width="40" height="40">
+                </div>
+            </div>
+         <div class="slidemenu--menual">
+            <button class="slidemenu__button">Ремонт техники</button>
+            <button class="slidemenu__button">Услуги и сервисы</button>
+            <button class="slidemenu__button">Корпоративным клиентам</button>
+            <button class="slidemenu__button">Продавцам техники</button>
+            <button class="slidemenu__button">Партнерам</button>
+            <button class="slidemenu__button">Производителям</button>
+            <button class="slidemenu__button">Наши сервисные центры</button>
+            <button class="slidemenu__button">Контакты</button>
+         </div>
+        </div>
+        <div class="slidemenu--footer">
+            <div class="slidemenu__contact">
+                <button id="modalcall" onclick="callOpen()">
+                    <img src="./icons/call.png" width="40" height="40" class="slidemenu__contact__item">
+                </button>
+                <button id="modalchat" onclick="chatOpen()">
+                    <img src="./icons/chat.png" width="40" height="40" class="slidemenu__contact__item">
+                </button>
+              <img src="./icons/profile.png" width="40" height="40" class="slidemenu__contact__item">
+              <div class="slidemenu__contact__mail">mail@cps.com</div>
+              <div class="slidemenu__contact__phone">8 800 890 8900</div>
+            </div> 
+            <div class="slidemenu__lang">
+                <span class="slidemenu__lang__ru">RU</span>
+                <span class="slidemenu__lang__en">EN</span>
+                <span class="slidemenu__lang__ch">CH</span>
+            </div>
+        </div>
+    </div>
+    <div id="feedback" style="display: none;">
+        <div>
+        <button id="feedbackClose" class="feedback__item" onclick="closeFeedback()">
+            <img src="./icons/burgerClose.png" width="40" height="40" >
+        </button>
+        </div>
+        <div>
+        <p class="feedback__text">Обратная связь</p>
+        <form class="feedback__form">
+            <input type="text" placeholder="Имя">
+            <input type="tel" placeholder="Телефон">
+            <input type="email" placeholder="Электронная почта">
+            <textarea placeholder="Сообщение"></textarea>
+        </form>
+            <p class="feedback__send">Нажимая “отправить”, вы даете согласие на 
+            <span>обработку персональных данных</span> и соглашаетесь с нашей 
+            <span>политикой конфиденциальности</span></p>
+            <img src="./icons/send.png" width="136" height="32" class="feedback__send__icon">
+        </div>
+    </div>
+    <div id="orderCall" style="display: none;">
+        <div>
+            <button id="orderClose" class="orderCall__item" onclick="closeOrder()">
+                <img src="./icons/burgerClose.png" width="40" height="40" >
+            </button>
+            <div>
+                <p class="orderCall__text">Заказать звонок</p>
+                <input type="tel" placeholder="Телефон" class="orderCall__tel">
+                <p class="orderCall__send">Нажимая “отправить”, вы даете согласие на 
+                    <span>обработку персональных данных</span> и соглашаетесь с нашей 
+                    <span>политикой конфиденциальности</span></p>
+                    <img src="./icons/send.png" width="136" height="32" class="ordercall__send__icon">
+                </div>
+            </div>
+    </div>
+    <div id="mainpart" class="main">
+        <div class="topmenu">
+            <div class="topmenu--left"> 
+                <button id="burgerButton" onclick="burgerOpen()">
+                    <img src="./icons/burger.png" width="40" height="40" class="topmenu__icon menu">
+                </button>
+                <img src="./icons/divider.png" width="2" heigth="32" class="topmenu__icon divider1">
+                <img src="./icons/Group.png" width="96" height="50" class="topmenu__icon logo">
+            </div>
+            <div class="topmenu--right">
+                <button id="modalcall" onclick="callOpen()">
+                    <img src="./icons/call.png" width="40" height="40" class="topmenu__icon call">                
+                </button>
+                <button id="modalchat" onclick="chatOpen()">
+                    <img src="./icons/chat.png" width="40" height="40" class="topmenu__icon chat">
+                </button>
+                <img src="./icons/profile.png" width="40" height="40" class="topmenu__icon profile">
+                <img src="./icons/divider.png" width="2" heigth="32" class="topmenu__icon divider2">
+                <img src="./icons/repair.png" width="40" height="40" class="topmenu__icon repair">
+                <img src="./icons/checkstatus.png" width="40" height="40" class="topmenu__icon check">
+            </div>
+        </div>
+        <div class="servicemenu">
+            <div class="servicemenu__top">
+                <p class="servicemenu__title">Услуги и сервисы</p>
+                <div class="topmenu--rightpart">
+                    <span class="text app">Оставить заявку</span>
+                    <img src="./icons/repair.png" width="40" height="40" class="repair">
+                    <span class="text status">Статус ремонта</span>
+                    <img src="./icons/checkstatus.png" width="40" height="40" class="check">
+                </div>
+            </div>
+                <div class="servicemenu__item">
+                    <button class="servicemenu__button brand">Ремонтируемые бренды</button>
+                    <button class="servicemenu__button device">Ремонтируемые устройства</button>
+                    <button class="servicemenu__button service">Дополнительные услуги</button>
+                    <button class="servicemenu__button prices">Цены на услуги</button>
+                    <button class="servicemenu__button address">Адреса сервисных центров</button>
+                    <button class="servicemenu__button special">Специальные цены</button>
+                    <button class="servicemenu__button review">Отзывы</button>
+                </div>
+                <div class="body__article">
+                    <div class="article">
+                        <p class="part1">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+                        <p class="part2">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, 
+                        <span class="part3">что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</span></p>
+                        <img src="./icons/expand.png" width="24" height="24">
+                        <span class="article__expand">Читать далее</span>
+                    </div>
+                    <div class="article__image">
+                       <img src="./image.png" class="body__image">  
+                    </div>
+                </div>
+                
+        </div>
+        <p class="repairbrand">РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ</p>   
+         <div class="brandmenu">
+             <div class="brandmenu__item">
+                <div class="brandmenu__item__icon lenovo">
+                    <img src="./icons/brand/lenovo.png" class="icon" width="108" height="32">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon samsung">
+                    <img src="./icons/brand/samsung.png" class="icon" width="116" height="38">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon apple">
+                    <img src="./icons/brand/apple.png" class="icon" width="44" height="44">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon sonic">
+                    <img src="./icons/brand/sonic.png" class="icon" width="128" height="21">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon bosch">
+                    <img src="./icons/brand/bosch.png" class="icon" width="128" height="28">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon hp">
+                    <img src="./icons/brand/hp.png" class="icon" width="52" height="52">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon acer">
+                    <img src="./icons/brand/acer.png" class="icon" width="94" height="24">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon sony">
+                    <img src="./icons/brand/sony.png" class="icon" width="128" height="26">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon" id="lenovo2">
+                    <img src="./icons/brand/lenovo.png" class="icon" width="108" height="32">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon" id="samsung2">
+                    <img src="./icons/brand/samsung.png" class="icon" width="116" height="38">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div>
+                <div class="brandmenu__item__icon" id="apple2">
+                    <img src="./icons/brand/apple.png" class="icon" width="44" height="44">
+                    <img src="./icons/brand/go.png" width="40" height="40">
+                </div> 
+            </div>
+            <div class="brandmenu__item__expand">
+                <img src="./icons/brand/expand.png" width="24" height="24" id="icon1">
+                <img src="./icons/brand/expand2.png" width="24" height="24" id="icon2" style="display: none">
+                <button id="exp" onclick="showAll()">Показать все</button>
+            </div> 
+        </div>
+        <div class="brandmenu--mobile">
+            <div class="brandmenu--mobile__catalog swiper-container">
+                <div class="bradnmenu--mobile__catalog__item swiper-wrapper">
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/lenovo.png" class="item" width="108" height="32">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/samsung.png" class="item" width="116" height="38">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/apple.png" class="item" width="44" height="44">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/sonic.png" class="item" width="128" height="21">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/bosch.png" class="item" width="128" height="28">
+                        <img src="./icons//brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/hp.png" class="item" width="52" height="52">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/acer.png" class="item" width="94" height="24">
+                        <img src="./icons//brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/sony.png" class="item" width="128" height="26">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/lenovo.png" class="item" width="108" height="32">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/samsung.png" class="item" width="116" height="38">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>
+                    <div class="brandmenu__catalog__item swiper-slide">
+                        <img src="./icons/brand/apple.png" class="item" width="44" height="44">
+                        <img src="./icons/brand/go.png" width="40" height="40">
+                    </div>   
+                </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        </div>
+        <p class="repairtech">РЕМОНТ РАЗЛИЧНЫХ ВИДОВ ТЕХНИКИ</p>
+        <div class="techmenu">
+            <div class="techmenu__item">
+                <div class="techmenu__item__list">
+                    Ремонт ноутбуков
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>
+                <div class="techmenu__item__list">
+                    Ремонт планшетов
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>
+                <div class="techmenu__item__list">
+                    Ремонт ПК
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>
+                <div class="techmenu__item__list monitor">
+                    Ремонт мониторов
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>
+                <div class="techmenu__item__list" id="laptop">
+                    Ремонт ноутбуков
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>
+                <div class="techmenu__item__list" id="pad">
+                    Ремонт телефонов
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>
+                <div class="techmenu__item__list" id="pc">
+                    Ремонт ПК
+                    <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                </div>  
+            </div>
+            <div class="techmenu__item__expand">
+                <img src="./icons/brand/expand.png" width="24" height="24" id="icon3">
+                <img src="./icons/brand/expand2.png" width="24" height="24" id="icon4" style="display: none">
+                <button id="techexp" onclick="showHide()">Показать все</button>
+            </div> 
+        </div>
+        <div class="techmenu--mobile">
+            <div class="techmenu--mobile__catalog swiper-container">
+                <div class="techmenu--mobile__catalog__item swiper-wrapper">
+                    <div class="techmenu__catalog__item swiper-slide">
+                        Ремонт планшетов
+                        <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                    </div>
+                    <div class="techmenu__catalog__item swiper-slide">
+                        Ремонт ПК
+                        <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                    </div>
+                    <div class="techmenu__catalog__item swiper-slide">
+                        Ремонт мониторов
+                        <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                    </div>
+                    <div class="techmenu__catalog__item swiper-slide">
+                        Ремонт ноутбуков
+                        <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                    </div>
+                    <div class="techmenu__catalog__item swiper-slide">
+                        Ремонт телефонов
+                        <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                    </div>
+                    <div class="techmenu__catalog__item swiper-slide">
+                        Ремонт ноутбуков
+                        <img src="./icons/brand/go.png" width="40" height="40" class="techmenu__item__icon">
+                    </div>
+                </div>
+            <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <p class="price">ЦЕНЫ НА УСЛУГИ</p>
+        <div class="pricemenu">
+            <table class="pricemenu__item">
+                <tr class="pricemenu__header">
+                    <td class="repairservice">
+                        Ремонтные услуги
+                    </td>
+                    <td class="repairprice">
+                        Цена
+                    </td>
+                    <td class="repairtime">
+                        Срок
+                    </td>
+                    <td class="repairorder">
+
+                    </td>
+                </tr>
+                <tr class="pricemenu__body">
+                    <td class="repairservice">
+                        Диагностика
+                    </td>
+                    <td class="repairprice">
+                        Бесплатно
+                    </td>
+                    <td class="repairtime">
+                        30мин
+                    </td>
+                    <td class="repairorder">
+                        <img src="./icons/order.png" width="119" height="32">
+                    </td>
+                </tr>
+                <tr class="pricemenu__body">
+                    <td class="repairservice">
+                        Замена дисплея
+                    </td>
+                    <td class="repairprice">
+                        1000 ₽
+                    </td>
+                    <td class="repairtime">
+                        30-120мин
+                    </td>
+                    <td class="repairorder">
+                        <img src="./icons/order.png" width="119" height="32">
+                    </td>
+                </tr>
+                <tr class="pricemenu__body">
+                    <td class="repairservice">
+                        Замена полифонического динамика
+                    </td>
+                    <td class="repairprice">
+                        1000 ₽
+                    </td>
+                    <td class="repairtime">
+                        30-120мин
+                    </td>
+                    <td class="repairorder">
+                        <img src="./icons/order.png" width="119" height="32">
+                    </td>
+                </tr>
+                <tr class="pricemenu__body">
+                    <td class="repairservice">
+                        Тестирование с выдачей технического заключения
+                    </td>
+                    <td class="repairprice">
+                        1000 ₽
+                    </td>
+                    <td class="repairtime">
+                        30-120мин
+                    </td>
+                    <td class="repairorder">
+                        <img src="./icons/order.png" width="119" height="32">
+                    </td>
+                </tr>
+                <tr class="pricemenu__body">
+                    <td class="repairservice">
+                        Замена программного обеспечения
+                    </td>
+                    <td class="repairprice">
+                        1000 ₽
+                    </td>
+                    <td class="repairtime">
+                        30-120мин
+                    </td>
+                    <td class="repairorder">
+                        <img src="./icons/order.png" width="119" height="32">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="pricemenu--mobile">
+            <div class="pricemenu--mobile__catalog swiper-container">
+                <div class="pricemenu--mobile__catalog__item swiper-wrapper">
+                    <div class="pricemenu__catalog__item swiper-slide">
+                        <div class="pricemenu__item__icon">
+                        <span>Ремонтные услуги</span><br>
+                        Тестирование с выдачей технического заключения 
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Цена</span><br>
+                        Бесплатно 
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Срок</span><br>
+                        30-120мин
+                        <img src="./icons/order.png" width="119" height="32" class="pricemenu__icon">
+                        </div>
+                    </div>
+                    <div class="pricemenu__catalog__item swiper-slide">
+                        <div class="pricemenu__item__icon">
+                        <span>Ремонтные услуги</span><br>
+                        Диагностика
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Цена</span><br>
+                        Бесплатно 
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Срок</span><br>
+                        30мин
+                        <img src="./icons/order.png" width="119" height="32" class="pricemenu__icon">
+                        </div>
+                    </div>
+                    <div class="pricemenu__catalog__item swiper-slide">
+                        <div class="pricemenu__item__icon">
+                        <span>Ремонтные услуги</span><br>
+                        Замена дисплея
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Цена</span><br>
+                        1000 ₽ 
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Срок</span><br>
+                        30-120мин
+                        <img src="./icons/order.png" width="119" height="32" class="pricemenu__icon">
+                        </div>
+                    </div>
+                    <div class="pricemenu__catalog__item swiper-slide">
+                        <div class="pricemenu__item__icon">
+                        <span>Ремонтные услуги</span><br>
+                        Замена полифонического динамика
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Цена</span><br>
+                        1000 ₽ 
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Срок</span><br>
+                        30-120мин
+                        <img src="./icons/order.png" width="119" height="32" class="pricemenu__icon">
+                        </div>
+                    </div>
+                    <div class="pricemenu__catalog__item swiper-slide">
+                        <div class="pricemenu__item__icon">
+                        <span>Ремонтные услуги</span><br>
+                        Замена программного обеспечения
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Цена</span><br>
+                        1000 ₽ 
+                        </div>
+                        <div class="pricemenu__item__icon">
+                        <span>Срок</span><br>
+                        30-120мин
+                        <img src="./icons/order.png" width="119" height="32" class="pricemenu__icon">
+                        </div>
+                    </div>
+                </div>
+            <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <p class="pricemenu__title">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</p>
+        <div class="getpurpose">
+            <p>Получить коммерческое предложение </p>
+            <img src="./icons/Line.png" width="10" height="6">
+        </div>
+        <div class="footer">
+            <div class="footer__item">
+                © 2019 CPS
+                <div>Разработано командой Apesong </div>
+            </div>
+            <div class="footer__item">
+                Политика конфиденциальности
+            </div>
+            <div class="footer__item">
+                Информация, размещенная на данной странице, не является публичной офертой
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

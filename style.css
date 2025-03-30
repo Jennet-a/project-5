@@ -1,0 +1,617 @@
+font-face {
+    font-family: 'TTLakes';
+    src: local('TTLakes-Black'), url('./fonts/TTLakes-Black.woff') format('woff');
+  }
+body {
+    display: flexbox;
+    margin: 0; 
+    padding: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+  }
+#slidemenu {
+  width: 320px;
+  height: max-content;
+  box-shadow: 16px 5px 52px #0E185033;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 2;
+}
+#burger, #burgerButton {
+  background-color: white;
+  border: none;
+}
+.slidemenu--top--header {
+  width: 320px;
+  margin-top: 23px;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.slidemenu--top--header--left {
+  display: inline-flex;
+  align-items: center;
+}
+.slidemenu--top--header__icon {
+  margin-right: 16px;
+}
+.slidemenu--menual {
+  margin-top: 50px;
+  font-size: 16px;
+}
+.slidemenu__button {
+  display: flex;
+  width: 100%;
+  margin-top: 32px;
+  padding-left: 24px;
+  background-color: white;
+  border: none;
+  color: #1B1C21;
+}
+.slidemenu__button:hover, .slidemenu__button:focus {
+  color: #7E7E82;
+  border-left: 2px solid #41F6D7;
+}
+.slidemenu__contact {
+  margin-left: 24px;
+}
+.slidemenu__contact__item {
+  margin-right: 16px;
+}
+.slidemenu__contact__mail {
+  margin-top: 16px;
+  font-size: 16px;
+}
+.slidemenu__contact__phone {
+  margin-top: 12px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.slidemenu__lang {
+  margin-left: 24px;
+  margin-top: 40px;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+.slidemenu__lang__ru, .slidemenu__lang__en {
+  margin-right: 8px;
+}
+.slidemenu__lang__ru {
+  color: #7E7E82;
+}
+.topmenu {
+    width: fit-content;
+    height: 88px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: white;
+    padding-right: 16px;
+}
+  .topmenu__icon {
+    margin-left: 16px;
+  }
+  .servicemenu {
+    height: max-content;
+  }
+  .servicemenu__title {
+    height: 40px;
+    align-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding-left: 12px;
+    border-left: 4px solid #41f6d7;
+  }
+  .servicemenu__item {
+    display: flexbox;
+    margin-left: 16px;
+    overflow-x: scroll; 
+    width: calc(100vw - 20px); 
+  }
+  .servicemenu__button {
+    height: 40px;
+    width: max-content;
+    min-width: 230px; 
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #7e7e82;
+    border: none;
+  }
+  .servicemenu__button:hover,
+  .servicemenu__button:focus {
+    background-color: #ffffff;
+    border: 2px solid #b8ffec;
+    border-radius: 6px;
+  }
+  .body__article {
+    display: flex;
+  }
+  .article {
+    padding-left: 16px;
+    font-size: 14px;
+    color: #1b1c21;
+    margin-right: 5px;
+  }
+  .article__expand {
+    display: inline-flex;
+    font-size: 16px;
+    height: 24px;
+    position: absolute;
+    align-items: center;
+  }
+  .repairbrand, .repairtech, .price {
+    height: 56px;
+    background-color: white;
+    border-top: 1px solid #D9FFF5;
+    font-size: 16px;
+    padding-left: 16px;
+    color: #7E7E82;
+    align-content: center;
+  }
+  .brandmenu__item__icon {
+    width: 224px;
+    height: 72px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .brandmenu__item__expand, .techmenu__item__expand {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-left: 24px;
+  }
+  #exp, #techexp {
+    font-size: 16px;
+    background-color: #F8F8F8;
+    border: none;
+}
+.brandmenu--mobile {
+  position: relative;
+  height: 110px;
+}
+.brandmenu--mobile__catalog {
+  height: 72px;
+  margin-left: 16px;
+}
+.swiper-wrapper {
+  width: 100vw;
+}
+.brandmenu__catalog__item {
+  width: 224px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: white;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 16px;
+}
+.swiper-pagination {
+  position: absolute;
+  top: 10px;
+}
+.techmenu--mobile {
+  position: relative;
+  height: 210px;
+  margin-left: 16px;
+}
+.techmenu__item__list {
+  width: 240px;
+  height: 160px;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 16px;
+}
+.techmenu__item__icon {
+  display: flex;
+  align-self: flex-end;
+  padding-bottom: 16px;
+}
+.techmenu__catalog__item {
+  width: 240px !important;
+  height: 160px !important;
+  background-color: white;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  padding-top: 16px;
+  margin-right: 16px;
+}
+.pricemenu__item {
+  margin-left: 16px;
+  font-size: 14px;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.repairservice {
+  width: 60%;
+  padding-left: 16px;
+  border-right: none;
+}
+.repairprice {
+  width: 15%;
+
+}
+.repairtime {
+  width: 15%;
+}
+.repairorder {
+  width: 30%;
+}
+.pricemenu__header {
+  color: #7E7E82;
+  height: 24px;
+}
+.pricemenu__body {
+  height: 65px;
+  background-color: white;
+  border-bottom: 1px solid #EAEAEA;
+}
+.pricemenu__title {
+  width: 55%;
+  font-size: 14px;
+  margin-left: 16px;
+}
+.pricemenu--mobile {
+  position: relative;
+  height: 210px;
+}
+.pricemenu--mobile__catalog {
+  margin-left: 16px;
+  height: 180px;
+}
+.pricemenu__catalog__item {
+  width: 260px !important;
+  background-color: white;
+  padding-left: 16px;
+  margin-right: 16px;
+}
+.pricemenu__item__icon {
+  padding-top: 16px;
+  font-size: 14px;
+  position: relative;
+}
+.pricemenu__item__icon span {
+ color: #7E7E82;
+}
+.pricemenu__icon {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+}
+.getpurpose {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.getpurpose p {
+  margin-right: 5px;
+}
+.footer {
+  padding: 16px;
+}
+.footer__item {
+  font-size: 14px;
+  font-weight: 500;
+  color: #7E7E82;
+}
+.feedback__text, .orderCall__text {
+  font-size: 24px;
+  font-weight: 700;
+  border-left: 3px solid #41F6D7;
+  padding-left: 16px;
+}
+#feedback, #orderCall {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-top: 24px;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  z-index: 2;
+}
+.feedback__form {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  padding-left: 16px;
+}
+.feedback__form input, .orderCall__tel {
+  margin-bottom: 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  height: 48px;
+  padding-left: 16px;
+}
+.feedback__form textarea {
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  height: 118px;
+  padding-top: 10px;
+  padding-left: 16px;
+}
+.feedback__send, .orderCall__send {
+  width: 90%;
+ font-size: 14px;
+ font-weight: 500;
+ color: #7E7E82;
+ padding-left: 16px;
+}
+.feedback__send span, .orderCall__send span {
+  color: #FF3E79;
+}
+.feedback__send__icon {
+  position: relative;
+  left: 155px;
+}
+.feedback__item {
+  border: none;
+}
+.orderCall__item, .orderCall__tel {
+  margin-left: 16px;
+}
+.orderCall__tel {
+  width: 85%;
+}
+.orderCall__item {
+  background-color: transparent;
+  border: none;
+}
+.ordercall__send__icon {
+  position: relative;
+  left: 270px;
+}
+#modalchat, #modalcall {
+  background-color: transparent;
+  border: none;
+}
+  @media (max-width: 767px) {
+    .brandmenu {
+      display: none;
+    }
+    #slidemenu {
+      display: none;
+      position: absolute;
+    }
+    .topmenu {
+      width: 100%;
+    }
+    .divider1,
+    .call,
+    .chat,
+    .profile,
+    .status,
+    .app,
+    .topmenu--rightpart {
+      display: none;
+    }
+    .servicemenu__item {
+      display: inline-flex;
+    }
+    .brand,
+    .address,
+    .part2,
+    .part3 {
+      display: none;
+    }
+    .body__article {
+      flex-direction: column;
+    }
+    .body__image {
+      width: 100%;
+    }
+    .techmenu {
+      display: none;
+    }
+    .pricemenu__title {
+      width: 80%;
+    }
+    .pricemenu {
+      display: none;
+    }
+    .footer__item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      text-align: center #41F6D7;
+    }
+    #feedback, #orderCall {
+      width: 320px;
+      display: none;
+    }
+    .feedback__item, .orderCall__item {
+      margin-left: 16px;
+      background-color: white;
+    }
+    .ordercall__send__icon {
+      position: relative;
+      left: 170px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    #slidemenu {
+      display: none;
+      position: absolute;
+    }
+    .topmenu {
+      width: 100%;
+    }
+    .servicemenu__item {
+      display: inline-flex;
+    }
+    .brand,
+    .address,
+    .status,
+    .app,
+    .part3,
+    .topmenu--rightpart {
+      display: none;
+    }
+    .repair,
+    .check {
+      margin-left: 16px; 
+    }
+    .body {
+      height: 400px;
+    }
+    .body__article {
+      flex-direction: row;
+    }
+    .article {
+      width: 60%;
+    }
+    .body__image {
+      width: 100%;
+    }
+    .brandmenu__item, .techmenu__item {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 16px;
+      margin-left: 16px;
+    }
+    .sony, .sonic {
+      display: none;
+    }
+    #lenovo2, #samsung2, #apple2 {
+      display: none;
+    }
+    .brandmenu--mobile, .pricemenu--mobile, .techmenu--mobile {
+      display: none;
+    }
+    #laptop, #pad, #pc, .monitor {
+      display: none;
+    }
+    .footer {
+      display: grid;
+      grid-template-columns:  1fr 1fr 1fr;
+    }
+    .footer__item:last-child {
+      text-align: right;
+    }
+    #feedback, #orderCall {
+      width: 440px;
+      display: none;
+    }
+    .feedback__send__icon {
+      left: 260px;
+    }
+    .feedback__item {
+      position: absolute;
+      left: -60px;
+      top: 40px;
+      background-color: transparent;
+    }
+    .orderCall__item {
+      position: absolute;
+      left: -75px;
+      top: 40px;
+    }
+  }
+  @media (min-width: 1440px) {
+    .body {
+      display: flex;
+    }   
+    #slidemenu {
+      display: flex !important;
+      box-shadow: none;
+      height: 100vh;
+    }
+    #burger {
+      display: none;
+    }
+    .main {
+      width: calc(100vw - 320px);
+    }
+    .topmenu{
+      display: none;
+    }
+    .topmenu--rightpart {
+      display: flex;
+      align-items: center;
+    }
+    .servicemenu__top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .text {
+      font-size: 16px;
+      bottom: 14px;
+      margin-right: 5px;
+    }
+    .repair,
+    .check {
+      margin-right: 16px;
+    }
+    .servicemenu {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .servicemenu__title {
+      margin-top: 40px;
+    }
+    .special {
+      display: none;
+    }
+    .article {
+      width: 60%;
+    }
+    .body__image {
+      width: 100%;
+    }
+    .brandmenu__item, .techmenu__item {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-row-gap: 16px;
+      margin-left: 16px;
+    }
+    #lenovo2, #samsung2, #apple2{
+      display: none;
+    }
+    .brandmenu--mobile, .techmenu--mobile, .pricemenu--mobile {
+      display: none;
+    }
+    #laptop, #pad, #pc {
+      display: none;
+    }
+    .footer {
+      display: grid;
+      grid-template-columns:  1fr 1fr 1fr;
+    }
+    .footer__item:last-child {
+      text-align: right;
+    }
+    #feedback, #orderCall {
+      width: 440px;
+      display: none;
+    }
+    .feedback__send__icon {
+      left: 260px;
+    }
+    .feedback__item {
+      position: absolute;
+      left: -60px;
+      top: 40px;
+      background-color: transparent;
+    }
+    .orderCall__item {
+      position: absolute;
+      left: -75px;
+      top: 40px;
+    }
+}
